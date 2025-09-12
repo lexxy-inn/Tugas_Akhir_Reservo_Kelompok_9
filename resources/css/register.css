@@ -1,0 +1,15 @@
+/* Custom styles for register page */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder {
+    color: #9ca3af; /* Tailwind gray-400 */
+}
+
+button#togglePassword {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+}

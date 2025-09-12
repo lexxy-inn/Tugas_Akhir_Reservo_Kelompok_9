@@ -1,47 +1,66 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex">
+    <div class="w-1/2 relative h-screen max-h-screen overflow-hidden mr-8">
+        <img src="{{ asset('build/assets/img/login new.jpg') }}" alt="Login Background" class="h-full w-full object-cover object-center" />
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-3xl font-bold text-center w-full px-4">
+            Set Your <span class="text-yellow-400">Game</span><br />
+            Play With <span class="text-yellow-400">Ease</span>
         </div>
+    </div>
+    <div class="w-1/2 flex flex-col justify-center px-16 text-left min-h-screen max-h-screen overflow-hidden">
+    <a href="{{ url('/dashboard') }}" class="flex items-center text-gray-600 hover:text-yellow-500 mb-6">
+        <img src="{{ asset('build/assets/img/arrow.png') }}" alt="Back" class="w-5 h-5 mr-2">
+        <span class="text-sm font-medium">Back to Dashboard</span>
+    </a>    
+        <h1 class="text-4xl font-bold mb-4 text-left">Login</h1>
+        <p class="mb-6 text-left">Don’t have an account? <a href="{{ route('register') }}" class="text-blue-600 underline">Register</a></p>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="mb-4">
+                <input id="email" name="email" type="email" placeholder="Enter your email" required autofocus
+                    class="w-full border border-gray-400 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                @error('email')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p> 
+                @enderror
+            </div>
+            <div class="mb-4 relative">
+                <input id="password" name="password" type="password" placeholder="Enter your password" required
+                    class="w-full border border-gray-400 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" /><i class="bi bi-eye-slash-fill absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer" id="togglePassword"></i>
+                @error('password')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mb-6 flex items-center">
+                <input id="remember_me" name="remember" type="checkbox" class="mr-2" />
+                <label for="remember_me" class="text-sm">Remember me</label>
+            </div>
+            <button type="submit" class="bg-yellow-400 text-black font-semibold py-3 rounded-lg w-full shadow-md hover:bg-yellow-500 transition">
+                Login
+            </button>
+        </form>
+    </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            this.classList.toggle('bi-eye-fill');
+            this.classList.toggle('bi-eye-slash-fill');
+        });
+    </script>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+</html>
