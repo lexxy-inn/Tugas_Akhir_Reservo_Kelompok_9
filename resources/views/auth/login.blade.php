@@ -8,21 +8,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen flex">
-    <div class="w-1/2 relative h-screen max-h-screen overflow-hidden mr-8">
-        <img src="{{ asset('build/assets/img/login new.jpg') }}" alt="Login Background" class="h-full w-full object-cover object-center" />
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-3xl font-bold text-center w-full px-4">
+<body class="min-h-screen flex flex-col md:flex-row">
+    <div class="w-full md:w-1/2 relative h-64 md:h-screen overflow-hidden">
+        <img src="{{ asset('build/assets/img/login new.jpg') }}" 
+             alt="Login Background" 
+             class="h-full w-full object-cover object-center" />
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-2xl md:text-3xl font-bold text-center w-full px-4">
             Set Your <span class="text-yellow-400">Game</span><br />
             Play With <span class="text-yellow-400">Ease</span>
         </div>
     </div>
-    <div class="w-1/2 flex flex-col justify-center px-16 text-left min-h-screen max-h-screen overflow-hidden">
-    <a href="{{ url('/dashboard') }}" class="flex items-center text-gray-600 hover:text-yellow-500 mb-6">
-        <img src="{{ asset('build/assets/img/arrow.png') }}" alt="Back" class="w-5 h-5 mr-2">
-        <span class="text-sm font-medium">Back to Dashboard</span>
-    </a>    
-        <h1 class="text-4xl font-bold mb-4 text-left">Login</h1>
-        <p class="mb-6 text-left">Don’t have an account? <a href="{{ route('register') }}" class="text-blue-600 underline">Register</a></p>
+
+    <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 py-10 md:py-0">
+        <a href="{{ url('/dashboard') }}" class="flex items-center text-gray-600 hover:text-yellow-500 mb-6">
+            <img src="{{ asset('build/assets/img/arrow.png') }}" alt="Back" class="w-5 h-5 mr-2">
+            <span class="text-sm font-medium">Back to Dashboard</span>
+        </a>    
+
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Login</h1>
+        <p class="mb-6">Don’t have an account? 
+            <a href="{{ route('register') }}" class="text-blue-600 underline">Register</a>
+        </p>
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="mb-4">
@@ -34,7 +41,8 @@
             </div>
             <div class="mb-4 relative">
                 <input id="password" name="password" type="password" placeholder="Enter your password" required
-                    class="w-full border border-gray-400 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" /><i class="bi bi-eye-slash-fill absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer" id="togglePassword"></i>
+                    class="w-full border border-gray-400 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                <i class="bi bi-eye-slash-fill absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer" id="togglePassword"></i>
                 @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -61,6 +69,5 @@
             this.classList.toggle('bi-eye-slash-fill');
         });
     </script>
-
 </body>
 </html>
