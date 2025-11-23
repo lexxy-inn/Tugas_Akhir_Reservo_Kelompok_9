@@ -10,7 +10,7 @@
 </head>
 <body class="min-h-screen flex">
     <div class="w-1/2 relative h-screen max-h-screen overflow-hidden mr-8">
-        <img src="{{ asset('build/assets/img/regis.jpg') }}" alt="Register Background" class="h-full w-full object-cover object-center" />
+        <img src="{{ asset('assets/img/regis.jpg') }}" alt="Register Background" class="h-full w-full object-cover object-center" />
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-3xl font-bold text-center w-full px-4">
             Set Your <span class="text-yellow-400">Game</span><br />
             Play With <span class="text-yellow-400">Ease</span>
@@ -18,7 +18,7 @@
     </div>
     <div class="w-1/2 flex flex-col justify-center px-16 text-left min-h-screen max-h-screen overflow-hidden">
         <a href="{{ url('/dashboard') }}" class="flex items-center text-gray-600 hover:text-yellow-500 mb-6">
-            <img src="{{ asset('build/assets/img/arrow.png') }}" alt="Back" class="w-5 h-5 mr-2">
+            <img src="{{ asset('assets/img/arrow.png') }}" alt="Back" class="w-5 h-5 mr-2">
             <span class="text-sm font-medium">Back to Dashboard</span>
         </a>
         <h1 class="text-4xl font-bold mb-4 text-left">Register</h1>

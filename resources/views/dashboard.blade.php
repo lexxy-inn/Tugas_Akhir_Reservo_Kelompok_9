@@ -8,22 +8,22 @@
 </head>
 <body class="bg-gray-100 p-0 m-0">
   <div class="relative w-full h-screen overflow-hidden shadow-lg">
-    <img src="{{ asset('build/assets/img/Homepage.png') }}"
+    <img src="{{ asset('assets/img/Homepage.png') }}"
          alt="Homepage Background"
          class="absolute inset-0 w-full h-full object-top" />
 
     <nav class="relative left-4 z-4 flex items-center justify-between px-8 py-10 text-white">
       <ul class="flex space-x-8 text-xl font-semibold items-center">
-        <li class="pt-3"><a href="#" class="hover:underline">Discover</a></li>
-        <li class="pt-3"><a href="#" class="hover:underline">Offers</a></li>
-        <li class="pt-3"><a href="#courts" class="hover:underline">Available Courts</a></li>
+        <li class="pt-3"><a href="{{ route('dashboard') }}">Discover</a></li>
+        <li class="pt-3"><a href="{{ route('orders') }}">Orders
+        <li class="pt-3"><a href="{{ route('see-more') }}">Available Courts</a></li>
       </ul>
       <div class="flex items-center space-x-4 text-xl font-semibold mt-3">
         <form method="GET" action="{{ route('dashboard') }}" class="relative right-10 -mt-1">
           <input type="text" name="search" placeholder="Search...."
                  class="rounded-full py-2 px-6 pr-12 text-white placeholder-white bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-yellow-400" />
           <button type="submit" class="absolute right-2 top-2 px-2">
-            <img src="{{ asset('build/assets/img/Search.png') }}" alt="Search" class="h-6 w-6" />
+            <img src="{{ asset('assets/img/Search.png') }}" alt="Search" class="h-6 w-6" />
           </button>
         </form>
         @auth
@@ -70,7 +70,7 @@
     <div class="max-w-7xl mx-auto space-y-32">
       <div class="flex flex-col md:flex-row items-center md:items-center gap-12 relative">
         <div class="w-full md:w-1/2">
-          <img src="{{ asset('build/assets/img/kemang.png') }}"
+          <img src="{{ asset('assets/img/kemang.png') }}"
                alt="PadelPro Kemang"
                class="w-full rounded-xl object-cover" />
         </div>
@@ -90,7 +90,7 @@
 
       <div class="flex flex-col md:flex-row-reverse items-center md:items-center gap-12 relative">
         <div class="w-full md:w-1/2">
-          <img src="{{ asset('build/assets/img/bass.png') }}"
+          <img src="{{ asset('assets/img/bass.png') }}"
                alt="Octo Basketball Court"
                class="w-full rounded-xl object-cover" />
         </div>
@@ -122,7 +122,7 @@
       <!-- Card 1 -->
       <div class="flex-shrink-0 w-[300px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="relative">
-          <img src="{{ asset('build/assets/img/wtp1.jpg') }}" alt="Court 1" class="w-full h-48 object-cover">
+          <img src="{{ asset('assets/img/wtp1.jpg') }}" alt="Court 1" class="w-full h-48 object-cover">
           <span class="absolute bottom-2 left-2 bg-yellow-400 text-white text-sm font-semibold px-3 py-1 rounded-full">
             New Court!
           </span>
@@ -137,7 +137,7 @@
             </div>
             <div class="flex flex-col">
               <div class="flex items-center space-x-2">
-                <img src="{{ asset('build/assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
+                <img src="{{ asset('assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
                 <p class="text-sm text-gray-600">Ahmad Yani Street No. 7</p>
               </div>
               <p class="text-sm text-yellow-500 mt-2">⭐⭐⭐⭐☆ (4.5)</p>
@@ -160,7 +160,7 @@
       <!-- Card 2 -->
       <div class="flex-shrink-0 w-[300px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="relative">
-          <img src="{{ asset('build/assets/img/wtp2.jpg') }}" alt="Court 2" class="w-full h-48 object-cover">
+          <img src="{{ asset('assets/img/wtp2.jpg') }}" alt="Court 2" class="w-full h-48 object-cover">
           <span class="absolute bottom-2 left-2 bg-yellow-500 text-white text-sm font-semibold px-3 py-1 rounded-full">
             Top Court!
           </span>
@@ -175,7 +175,7 @@
             </div>
             <div class="flex flex-col">
               <div class="flex items-center space-x-2">
-                <img src="{{ asset('build/assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
+                <img src="{{ asset('assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
                 <p class="text-sm text-gray-600">Merdeka Street No. 10</p>
               </div>
               <p class="text-sm text-yellow-500 mt-2">⭐⭐⭐⭐⭐ (5.0)</p>
@@ -196,7 +196,7 @@
       <!-- Card 3 -->
       <div class="flex-shrink-0 w-[300px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="relative">
-          <img src="{{ asset('build/assets/img/wtp3.jpg') }}" alt="Court 3" class="w-full h-48 object-cover">
+          <img src="{{ asset('assets/img/wtp3.jpg') }}" alt="Court 3" class="w-full h-48 object-cover">
           <span class="absolute bottom-2 left-2 bg-yellow-400 text-white text-sm font-semibold px-3 py-1 rounded-full">
             Popular!
           </span>
@@ -211,7 +211,7 @@
             </div>
             <div class="flex flex-col">
               <div class="flex items-center space-x-2">
-                <img src="{{ asset('build/assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
+                <img src="{{ asset('assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
                 <p class="text-sm text-gray-600">Braga Street No. 8</p>
               </div>
               <p class="text-sm text-yellow-500 mt-2">⭐⭐⭐⭐ (4.0)</p>
@@ -232,7 +232,7 @@
       <!-- Card 4 -->
       <div class="flex-shrink-0 w-[300px] bg-white rounded-xl shadow-lg overflow-hidden">
         <div class="relative">
-          <img src="{{ asset('build/assets/img/wtp4.jpeg') }}" alt="Court 4" class="w-full h-48 object-cover">
+          <img src="{{ asset('assets/img/wtp4.jpeg') }}" alt="Court 4" class="w-full h-48 object-cover">
           <span class="absolute bottom-2 left-2 bg-yellow-400 text-white text-sm font-semibold px-3 py-1 rounded-full">
             Hot Spot!
           </span>
@@ -247,7 +247,7 @@
             </div>
             <div class="flex flex-col">
               <div class="flex items-center space-x-2">
-                <img src="{{ asset('build/assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
+                <img src="{{ asset('assets/img/maps.png') }}" alt="Map Icon" class="h-5 w-5">
                 <p class="text-sm text-gray-600">Cihampelas Street No. 15</p>
               </div>
               <p class="text-sm text-yellow-500 mt-2">⭐⭐⭐☆ (3.5)</p>
@@ -270,7 +270,7 @@
 
 
    <div class="text-center mt-16">
-    <a href="#"
+    <a href="{{ route('see-more') }}"
        class="border border-yellow-400 text-yellow-500 hover:bg-yellow-400 hover:text-white transition px-8 py-2 rounded-full font-semibold relative bottom-6">
       See More
     </a>
@@ -281,10 +281,9 @@
 <footer class="bg-amber-400 text-black py-12 px-8">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
 
-    <!-- Brand & Description -->
     <div>
       <div class="flex items-center space-x-2 relative right-20">
-        <img src="{{ asset('build/assets/img/logo.png') }}" alt="Reservo Logo" class="h-10 w-auto">
+        <img src="{{ asset('assets/img/logo.png') }}" alt="Reservo Logo" class="h-10 w-auto">
         <h2 class="text-2xl font-extrabold">RESERVO</h2>
       </div>
       <p class="mt-4 text-sm leading-relaxed relative right-20">
@@ -293,7 +292,7 @@
       </p>
     </div>
 
-    <!-- Products -->
+
     <div>
       <h3 class="text-lg font-bold mb-4">Products</h3>
       <ul class="space-y-2">
@@ -304,7 +303,7 @@
       </ul>
     </div>
 
-    <!-- Contact -->
+
     <div>
       <h3 class="text-lg font-bold mb-4">Contact</h3>
       <ul class="space-y-2">
@@ -327,7 +326,7 @@
 
   </div>
 
-  <!-- Bottom Section -->
+  
   <div class="border-t border-black mt-10 pt-8 flex flex-col md:flex-row items-center justify-between text-sm">
     <p>© 2025 All Rights Reserved</p>
     <div class="flex space-x-6 mt-4 md:mt-0">
